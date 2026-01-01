@@ -1,0 +1,338 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\playwright.config.ts",
+    "rootDir": "C:/Users/Administrator/Desktop/khadamat100kilo-master/khadamat-frontend/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/smoke-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/Administrator/Desktop/khadamat100kilo-master/khadamat-frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/Administrator/Desktop/khadamat100kilo-master/khadamat-frontend/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 120000
+      }
+    ],
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.57.0",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "e2e\\auth-multitab.spec.ts",
+      "file": "e2e/auth-multitab.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Auth multi-tab + refresh breaker",
+          "file": "e2e/auth-multitab.spec.ts",
+          "line": 49,
+          "column": 6,
+          "specs": [
+            {
+              "title": "T1 Logout sync: B becomes anonymous immediately, no refresh/profile on B",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 65954,
+                      "error": {
+                        "message": "TimeoutError: page.goto: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/auth/login\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "TimeoutError: page.goto: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/auth/login\", waiting until \"load\"\u001b[22m\n\n    at login (C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts:35:14)\n    at C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts:55:11",
+                        "location": {
+                          "file": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts",
+                          "column": 14,
+                          "line": 35
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 33 |\u001b[39m\n \u001b[90m 34 |\u001b[39m \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m login(page\u001b[33m:\u001b[39m \u001b[33mPage\u001b[39m) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m`${BASE_URL}/auth/login`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 36 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'auth-email'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[33mEMAIL\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 37 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'auth-password'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[33mPASSWORD\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 38 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'auth-submit'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts",
+                            "column": 14,
+                            "line": 35
+                          },
+                          "message": "TimeoutError: page.goto: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/auth/login\", waiting until \"load\"\u001b[22m\n\n\n  33 |\n  34 | async function login(page: Page) {\n> 35 |   await page.goto(`${BASE_URL}/auth/login`);\n     |              ^\n  36 |   await page.getByTestId('auth-email').fill(EMAIL);\n  37 |   await page.getByTestId('auth-password').fill(PASSWORD);\n  38 |   await page.getByTestId('auth-submit').click();\n    at login (C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts:35:14)\n    at C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts:55:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-29T20:50:22.183Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\test-results\\e2e-auth-multitab-Auth-mul-215fb-ely-no-refresh-profile-on-B-chromium\\test-failed-2.png"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts",
+                        "column": 14,
+                        "line": 35
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "dc257d4892cdd6d260f7-291ae2f4c9c4758d7f53",
+              "file": "e2e/auth-multitab.spec.ts",
+              "line": 50,
+              "column": 7
+            },
+            {
+              "title": "T2 Login sync: B bootstraps exactly once (/user/profile once)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 65998,
+                      "error": {
+                        "message": "TimeoutError: page.goto: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "TimeoutError: page.goto: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n\n    at C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts:78:17",
+                        "location": {
+                          "file": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts",
+                          "column": 17,
+                          "line": 78
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 76 |\u001b[39m     \u001b[36mconst\u001b[39m pageB \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m context\u001b[33m.\u001b[39mnewPage()\u001b[33m;\u001b[39m\n \u001b[90m 77 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 78 |\u001b[39m     \u001b[36mawait\u001b[39m pageA\u001b[33m.\u001b[39mgoto(\u001b[32m`${BASE_URL}/`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 79 |\u001b[39m     \u001b[36mawait\u001b[39m pageB\u001b[33m.\u001b[39mgoto(\u001b[32m`${BASE_URL}/`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 80 |\u001b[39m\n \u001b[90m 81 |\u001b[39m     \u001b[36mconst\u001b[39m trackerB \u001b[33m=\u001b[39m makeCallTracker(pageB)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts",
+                            "column": 17,
+                            "line": 78
+                          },
+                          "message": "TimeoutError: page.goto: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n\n\n  76 |     const pageB = await context.newPage();\n  77 |\n> 78 |     await pageA.goto(`${BASE_URL}/`);\n     |                 ^\n  79 |     await pageB.goto(`${BASE_URL}/`);\n  80 |\n  81 |     const trackerB = makeCallTracker(pageB);\n    at C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts:78:17"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-29T20:50:22.342Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\test-results\\e2e-auth-multitab-Auth-mul-b49c9-tly-once-user-profile-once--chromium\\test-failed-2.png"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts",
+                        "column": 17,
+                        "line": 78
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "dc257d4892cdd6d260f7-f1901654177bc31c7e96",
+              "file": "e2e/auth-multitab.spec.ts",
+              "line": 73,
+              "column": 7
+            },
+            {
+              "title": "T3 REFRESH_FAILED broadcast: force refresh 401 in A => B becomes anonymous, no storm",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 65917,
+                      "error": {
+                        "message": "TimeoutError: page.goto: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/auth/login\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "TimeoutError: page.goto: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/auth/login\", waiting until \"load\"\u001b[22m\n\n    at login (C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts:35:14)\n    at C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts:101:11",
+                        "location": {
+                          "file": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts",
+                          "column": 14,
+                          "line": 35
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 33 |\u001b[39m\n \u001b[90m 34 |\u001b[39m \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m login(page\u001b[33m:\u001b[39m \u001b[33mPage\u001b[39m) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m`${BASE_URL}/auth/login`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 36 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'auth-email'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[33mEMAIL\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 37 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'auth-password'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[33mPASSWORD\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 38 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'auth-submit'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts",
+                            "column": 14,
+                            "line": 35
+                          },
+                          "message": "TimeoutError: page.goto: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/auth/login\", waiting until \"load\"\u001b[22m\n\n\n  33 |\n  34 | async function login(page: Page) {\n> 35 |   await page.goto(`${BASE_URL}/auth/login`);\n     |              ^\n  36 |   await page.getByTestId('auth-email').fill(EMAIL);\n  37 |   await page.getByTestId('auth-password').fill(PASSWORD);\n  38 |   await page.getByTestId('auth-submit').click();\n    at login (C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts:35:14)\n    at C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts:101:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-29T20:51:39.000Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\test-results\\e2e-auth-multitab-Auth-mul-e9f33--becomes-anonymous-no-storm-chromium\\test-failed-2.png"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts",
+                        "column": 14,
+                        "line": 35
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "dc257d4892cdd6d260f7-17dfaf8370a3f92a9c23",
+              "file": "e2e/auth-multitab.spec.ts",
+              "line": 96,
+              "column": 7
+            },
+            {
+              "title": "T4 Breaker reset: after REFRESH_FAILED, login re-enables refresh path",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 65785,
+                      "error": {
+                        "message": "TimeoutError: page.goto: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/auth/login\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "TimeoutError: page.goto: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/auth/login\", waiting until \"load\"\u001b[22m\n\n    at login (C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts:35:14)\n    at C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts:132:11",
+                        "location": {
+                          "file": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts",
+                          "column": 14,
+                          "line": 35
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 33 |\u001b[39m\n \u001b[90m 34 |\u001b[39m \u001b[36masync\u001b[39m \u001b[36mfunction\u001b[39m login(page\u001b[33m:\u001b[39m \u001b[33mPage\u001b[39m) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m`${BASE_URL}/auth/login`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 36 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'auth-email'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[33mEMAIL\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 37 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'auth-password'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[33mPASSWORD\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 38 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'auth-submit'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts",
+                            "column": 14,
+                            "line": 35
+                          },
+                          "message": "TimeoutError: page.goto: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/auth/login\", waiting until \"load\"\u001b[22m\n\n\n  33 |\n  34 | async function login(page: Page) {\n> 35 |   await page.goto(`${BASE_URL}/auth/login`);\n     |              ^\n  36 |   await page.getByTestId('auth-email').fill(EMAIL);\n  37 |   await page.getByTestId('auth-password').fill(PASSWORD);\n  38 |   await page.getByTestId('auth-submit').click();\n    at login (C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts:35:14)\n    at C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts:132:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-29T20:51:39.088Z",
+                      "annotations": [],
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\khadamat-frontend\\tests\\e2e\\auth-multitab.spec.ts",
+                        "column": 14,
+                        "line": 35
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "dc257d4892cdd6d260f7-eb9719fde559b393724c",
+              "file": "e2e/auth-multitab.spec.ts",
+              "line": 128,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-12-29T20:50:08.708Z",
+    "duration": 163357.802,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rapport Playwright - http://localhost:3000/</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 16px; }
+    h1 { margin-bottom: 4px; }
+    .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; }
+    .card { padding: 12px; background: #f5f5f5; border-radius: 8px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 16px; }
+    th, td { border: 1px solid #ddd; padding: 8px; }
+    th { background: #fafafa; text-align: left; }
+    .critical { color: #b00020; font-weight: bold; }
+    .high { color: #d95f02; font-weight: bold; }
+    .medium { color: #e6a700; }
+    .low { color: #467fcf; }
+  </style>
+</head>
+<body>
+  <h1>Rapport Playwright</h1>
+  <div class="summary">
+    <div class="card"><strong>Base URL</strong><br/>http://localhost:3000/</div>
+    <div class="card"><strong>Pages</strong><br/>7</div>
+    <div class="card"><strong>Erreurs totales</strong><br/>42</div>
+    <div class="card"><strong>Critiques</strong><br/>3</div>
+    <div class="card"><strong>Haute</strong><br/>21</div>
+    <div class="card"><strong>Avertissements</strong><br/>8</div>
+    <div class="card"><strong>Suggestions</strong><br/>10</div>
+    <div class="card"><strong>Durée</strong><br/>121s</div>
+  </div>
+
+  <h2>Issues (42)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Gravité</th>
+        <th>Catégorie</th>
+        <th>Page</th>
+        <th>Description</th>
+        <th>Capture</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+            <td class="critical">critical</td>
+            <td>navigation</td>
+            <td><a href="http://localhost:3000/services" target="_blank" rel="noreferrer">http://localhost:3000/services</a></td>
+            <td>Navigation échouée: page.goto: net::ERR_ABORTED at http://localhost:3000/services
+Call log:
+[2m  - navigating to &quot;http://localhost:3000/services&quot;, waiting until &quot;networkidle&quot;[22m
+</td>
+            <td></td>
+          </tr><tr>
+            <td class="critical">critical</td>
+            <td>navigation</td>
+            <td><a href="http://localhost:3000/contact" target="_blank" rel="noreferrer">http://localhost:3000/contact</a></td>
+            <td>Navigation échouée: page.goto: Navigation to &quot;http://localhost:3000/contact&quot; is interrupted by another navigation to &quot;http://localhost:3000/&quot;
+Call log:
+[2m  - navigating to &quot;http://localhost:3000/contact&quot;, waiting until &quot;networkidle&quot;[22m
+</td>
+            <td></td>
+          </tr><tr>
+            <td class="critical">critical</td>
+            <td>navigation</td>
+            <td><a href="http://localhost:3000/services?service=Peinture" target="_blank" rel="noreferrer">http://localhost:3000/services?service=Peinture</a></td>
+            <td>Navigation échouée: page.goto: Page crashed
+Call log:
+[2m  - navigating to &quot;http://localhost:3000/services?service=Peinture&quot;, waiting until &quot;networkidle&quot;[22m
+</td>
+            <td></td>
+          </tr><tr>
+            <td class="high">high</td>
+            <td>network</td>
+            <td><a href="http://localhost:3000/" target="_blank" rel="noreferrer">http://localhost:3000/</a></td>
+            <td>Requête échouée: http://localhost:3000/_next/static/chunks/main-app.js?v=1766948521878 (net::ERR_ABORTED)</td>
+            <td></td>
+          </tr><tr>
+            <td class="high">high</td>
+            <td>network</td>
+            <td><a href="http://localhost:3000/" target="_blank" rel="noreferrer">http://localhost:3000/</a></td>
+            <td>Requête échouée: http://localhost:3000/_next/static/chunks/app/template.js (net::ERR_ABORTED)</td>
+            <td></td>
+          </tr><tr>
+            <td class="high">high</td>
+            <td>network</td>
+            <td><a href="http://localhost:3000/" target="_blank" rel="noreferrer">http://localhost:3000/</a></td>
+            <td>Requête échouée: http://localhost:3000/_next/static/chunks/app/services/page.js (net::ERR_ABORTED)</td>
+            <td></td>
+          </tr><tr>
+            <td class="high">high</td>
+            <td>network</td>
+            <td><a href="http://localhost:3000/" target="_blank" rel="noreferrer">http://localhost:3000/</a></td>
+            <td>Requête échouée: http://localhost:3000/_next/static/chunks/app/layout.js (net::ERR_ABORTED)</td>
+            <td></td>
+          </tr><tr>
+            <td class="high">high</td>
+            <td>network</td>
+            <td><a href="http://localhost:3000/services" target="_blank" rel="noreferrer">http://localhost:3000/services</a></td>
+            <td>Réponse HTTP 401 pour http://localhost:3000/api/auth/refresh</td>
+            <td></td>
+          </tr><tr>
+            <td class="high">high</td>
+            <td>javascript</td>
+            <td><a href="http://localhost:3000/services" target="_blank" rel="noreferrer">http://localhost:3000/services</a></td>
+            <td>[console error] Failed to load resource: the server responded with a status of 401 (Unauthorized)</td>
+            <td></td>
+          </tr><tr>
+            <td class="high">high</td>
+            <td>network</td>
+            <td><a href="http://localhost:3000/blog" target="_blank" rel="noreferrer">http://localhost:3000/blog</a></td>
+            <td>Requête échouée: http://localhost:3000/_next/static/chunks/main-app.js?v=1766948535822 (net::ERR_ABORTED)</td>
+            <td></td>
+          </tr><tr>
+            <td class="high">high</td>
+            <td>network</td>
+            <td><a href="http://localhost:3000/faq" target="_blank" rel="noreferrer">http://localhost:3000/faq</a></td>
+            <td>Requête échouée: http://localhost:3000/ (net::ERR_ABORTED)</td>
+            <td></td>
+          </tr><tr>
+            <td class="high">high</td>
+            <td>network</td>
+            <td><a href="http://localhost:3000/auth/signup" target="_blank" rel="noreferrer">http://localhost:3000/auth/signup</a></td>
+            <td>Requête échouée: http://localhost:3000/_next/static/chunks/main-app.js?v=1766948562175 (net::ERR_ABORTED)</td>
+            <td></td>
+          </tr><tr>
+            <td class="high">high</td>
+            <td>network</td>
+            <td><a href="http://localhost:3000/auth/signup" target="_blank" rel="noreferrer">http://localhost:3000/auth/signup</a></td>
+            <td>Requête échouée: http://localhost:3000/_next/static/chunks/app/contact/page.js (net::ERR_ABORTED)</td>
+            <td></td>
+          </tr><tr>
+            <td class="high">high</td>
+            <td>network</td>
+            <td><a href="http://localhost:3000/services?service=%C3%89lectricit%C3%A9" target="_blank" rel="noreferrer">http://localhost:3000/services?service=%C3%89lectricit%C3%A9</a></td>
+            <td>Réponse HTTP 429 pour http://localhost:3000/api/auth/refresh</td>
+            <td></td>
+          </tr><tr>
+            <td class="high">high</td>
+            <td>javascript</td>
+            <td><a href="http://localhost:3000/services?service=%C3%89lectricit%C3%A9" target="_blank" rel="noreferrer">http://localhost:3000/services?service=%C3%89lectricit%C3%A9</a></td>
+            <td>[console error] Failed to load resource: the server responded with a status of 429 (Too Many Requests)</td>
+            <td></td>
+          </tr><tr>
+            <td class="high">high</td>
+            <td>network</td>
+            <td><a href="http://localhost:3000/services?service=M%C3%A9nage" target="_blank" rel="noreferrer">http://localhost:3000/services?service=M%C3%A9nage</a></td>
+            <td>Réponse HTTP 429 pour http://localhost:3000/api/auth/refresh</td>
+            <td></td>
+          </tr><tr>
+            <td class="high">high</td>
+            <td>network</td>
+            <td><a href="http://localhost:3000/services?service=M%C3%A9nage" target="_blank" rel="noreferrer">http://localhost:3000/services?service=M%C3%A9nage</a></td>
+            <td>Réponse HTTP 429 pour http://localhost:3000/api/auth/refresh</td>
+            <td></td>
+          </tr><tr>
+            <td class="high">high</td>
+            <td>network</td>
+            <td><a href="http://localhost:3000/services?service=M%C3%A9nage" target="_blank" rel="noreferrer">http://localhost:3000/services?service=M%C3%A9nage</a></td>
+            <td>Réponse HTTP 429 pour http://localhost:3000/api/auth/refresh</td>
+            <td></td>
+          </tr><tr>
+            <td class="high">high</td>
+            <td>javascript</td>
+            <td><a href="http://localhost:3000/services?service=M%C3%A9nage" target="_blank" rel="noreferrer">http://localhost:3000/services?service=M%C3%A9nage</a></td>
+            <td>[console error] Failed to load resource: the server responded with a status of 429 (Too Many Requests)</td>
+            <td></td>
+          </tr><tr>
+            <td class="high">high</td>
+            <td>javascript</td>
+            <td><a href="http://localhost:3000/services?service=M%C3%A9nage" target="_blank" rel="noreferrer">http://localhost:3000/services?service=M%C3%A9nage</a></td>
+            <td>[console error] Failed to load resource: the server responded with a status of 429 (Too Many Requests)</td>
+            <td></td>
+          </tr><tr>
+            <td class="high">high</td>
+            <td>javascript</td>
+            <td><a href="http://localhost:3000/services?service=M%C3%A9nage" target="_blank" rel="noreferrer">http://localhost:3000/services?service=M%C3%A9nage</a></td>
+            <td>[console error] Failed to load resource: the server responded with a status of 429 (Too Many Requests)</td>
+            <td></td>
+          </tr><tr>
+            <td class="high">high</td>
+            <td>network</td>
+            <td><a href="http://localhost:3000/services?service=Peinture" target="_blank" rel="noreferrer">http://localhost:3000/services?service=Peinture</a></td>
+            <td>Réponse HTTP 429 pour http://localhost:3000/api/auth/refresh</td>
+            <td></td>
+          </tr><tr>
+            <td class="high">high</td>
+            <td>network</td>
+            <td><a href="http://localhost:3000/services?service=Peinture" target="_blank" rel="noreferrer">http://localhost:3000/services?service=Peinture</a></td>
+            <td>Requête échouée: http://localhost:3000/api/services?sort=rating&amp;order=desc&amp;page=1&amp;limit=20 (net::ERR_ABORTED)</td>
+            <td></td>
+          </tr><tr>
+            <td class="high">high</td>
+            <td>javascript</td>
+            <td><a href="http://localhost:3000/services?service=Peinture" target="_blank" rel="noreferrer">http://localhost:3000/services?service=Peinture</a></td>
+            <td>[console error] Failed to load resource: the server responded with a status of 429 (Too Many Requests)</td>
+            <td></td>
+          </tr><tr>
+            <td class="medium">medium</td>
+            <td>performance</td>
+            <td><a href="http://localhost:3000/" target="_blank" rel="noreferrer">http://localhost:3000/</a></td>
+            <td>Temps de chargement élevé (8431 ms)</td>
+            <td></td>
+          </tr><tr>
+            <td class="medium">medium</td>
+            <td>performance</td>
+            <td><a href="http://localhost:3000/blog" target="_blank" rel="noreferrer">http://localhost:3000/blog</a></td>
+            <td>Temps de chargement élevé (7341 ms)</td>
+            <td></td>
+          </tr><tr>
+            <td class="medium">medium</td>
+            <td>performance</td>
+            <td><a href="http://localhost:3000/faq" target="_blank" rel="noreferrer">http://localhost:3000/faq</a></td>
+            <td>Temps de chargement élevé (12668 ms)</td>
+            <td></td>
+          </tr><tr>
+            <td class="medium">medium</td>
+            <td>performance</td>
+            <td><a href="http://localhost:3000/auth/signup" target="_blank" rel="noreferrer">http://localhost:3000/auth/signup</a></td>
+            <td>Temps de chargement élevé (12279 ms)</td>
+            <td></td>
+          </tr><tr>
+            <td class="medium">medium</td>
+            <td>performance</td>
+            <td><a href="http://localhost:3000/services?service=Plomberie" target="_blank" rel="noreferrer">http://localhost:3000/services?service=Plomberie</a></td>
+            <td>Temps de chargement élevé (10394 ms)</td>
+            <td></td>
+          </tr><tr>
+            <td class="medium">medium</td>
+            <td>performance</td>
+            <td><a href="http://localhost:3000/services?service=%C3%89lectricit%C3%A9" target="_blank" rel="noreferrer">http://localhost:3000/services?service=%C3%89lectricit%C3%A9</a></td>
+            <td>Temps de chargement élevé (4963 ms)</td>
+            <td></td>
+          </tr><tr>
+            <td class="medium">medium</td>
+            <td>performance</td>
+            <td><a href="http://localhost:3000/services?service=M%C3%A9nage" target="_blank" rel="noreferrer">http://localhost:3000/services?service=M%C3%A9nage</a></td>
+            <td>Temps de chargement élevé (7832 ms)</td>
+            <td></td>
+          </tr><tr>
+            <td class="medium">medium</td>
+            <td>javascript</td>
+            <td><a href="http://localhost:3000/services?service=M%C3%A9nage" target="_blank" rel="noreferrer">http://localhost:3000/services?service=M%C3%A9nage</a></td>
+            <td>[console warning] API POST /auth/refresh 429: [object Object]</td>
+            <td></td>
+          </tr><tr>
+            <td class="low">low</td>
+            <td>form</td>
+            <td><a href="http://localhost:3000/" target="_blank" rel="noreferrer">http://localhost:3000/</a></td>
+            <td>Formulaire sans champs requis détectés (vérifier la validation côté client)</td>
+            <td></td>
+          </tr><tr>
+            <td class="low">low</td>
+            <td>form</td>
+            <td><a href="http://localhost:3000/" target="_blank" rel="noreferrer">http://localhost:3000/</a></td>
+            <td>Formulaire sans champs requis détectés (vérifier la validation côté client)</td>
+            <td></td>
+          </tr><tr>
+            <td class="low">low</td>
+            <td>seo</td>
+            <td><a href="http://localhost:3000/blog" target="_blank" rel="noreferrer">http://localhost:3000/blog</a></td>
+            <td>Pas de balise H1 trouvée</td>
+            <td></td>
+          </tr><tr>
+            <td class="low">low</td>
+            <td>form</td>
+            <td><a href="http://localhost:3000/blog" target="_blank" rel="noreferrer">http://localhost:3000/blog</a></td>
+            <td>Formulaire sans champs requis détectés (vérifier la validation côté client)</td>
+            <td></td>
+          </tr><tr>
+            <td class="low">low</td>
+            <td>form</td>
+            <td><a href="http://localhost:3000/blog" target="_blank" rel="noreferrer">http://localhost:3000/blog</a></td>
+            <td>Formulaire sans champs requis détectés (vérifier la validation côté client)</td>
+            <td></td>
+          </tr><tr>
+            <td class="low">low</td>
+            <td>form</td>
+            <td><a href="http://localhost:3000/faq" target="_blank" rel="noreferrer">http://localhost:3000/faq</a></td>
+            <td>Formulaire sans champs requis détectés (vérifier la validation côté client)</td>
+            <td></td>
+          </tr><tr>
+            <td class="low">low</td>
+            <td>form</td>
+            <td><a href="http://localhost:3000/auth/signup" target="_blank" rel="noreferrer">http://localhost:3000/auth/signup</a></td>
+            <td>Formulaire sans champs requis détectés (vérifier la validation côté client)</td>
+            <td></td>
+          </tr><tr>
+            <td class="low">low</td>
+            <td>form</td>
+            <td><a href="http://localhost:3000/services?service=Plomberie" target="_blank" rel="noreferrer">http://localhost:3000/services?service=Plomberie</a></td>
+            <td>Formulaire sans champs requis détectés (vérifier la validation côté client)</td>
+            <td></td>
+          </tr><tr>
+            <td class="low">low</td>
+            <td>form</td>
+            <td><a href="http://localhost:3000/services?service=%C3%89lectricit%C3%A9" target="_blank" rel="noreferrer">http://localhost:3000/services?service=%C3%89lectricit%C3%A9</a></td>
+            <td>Formulaire sans champs requis détectés (vérifier la validation côté client)</td>
+            <td></td>
+          </tr><tr>
+            <td class="low">low</td>
+            <td>form</td>
+            <td><a href="http://localhost:3000/services?service=M%C3%A9nage" target="_blank" rel="noreferrer">http://localhost:3000/services?service=M%C3%A9nage</a></td>
+            <td>Formulaire sans champs requis détectés (vérifier la validation côté client)</td>
+            <td></td>
+          </tr>
+    </tbody>
+  </table>
+</body>
+</html>

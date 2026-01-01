@@ -1,0 +1,377 @@
+'use client';
+
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import {
+  AlertCircle,
+  Users,
+  Search,
+  Info,
+  X,
+  Star,
+  MapPin,
+  Shield,
+  Crown,
+  MessageCircle
+} from 'lucide-react';
+import { api } from '@/lib/api';
+
+// Service card component for individual services
+interface ServiceCardProps {
+  service: any;
+  index: number;
+}
+
+const ServiceCard: React.FC<ServiceCardProps> = ({ service, index }) => {
+  const router = useRouter();
+  const averageRating = Number(service?.proProfile?.averageRating ?? 0);
+  const totalReviews = service?.proProfile?.totalReviews ?? 0;
+
+  const getInitials = (name: string) => {
+    return name.split(' ').map(n => n[0]).join('').toUpperCase();
+  };
+
+  const handleContactClick = () => {
+    alert('La messagerie arrive bientôt ! Connectez-vous pour contacter cet artisan.');
+  };
+
+  return (
+    <div
+      className="bg-gradient-to-br from-[rgba(250,247,242,0.8)] to-[rgba(255,255,255,0.5)] backdrop-blur-sm rounded-[24px] p-6 shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] transition-all duration-200 hover:scale-[1.02] border-0 flex flex-col h-full"
+    >
+      <div className="flex flex-col h-full">
+        {/* Content Area */}
+        <div className="flex-1 space-y-4">
+          {/* Header with Avatar and Badges */}
+          <div className="flex items-start space-x-3">
+            <div className="relative">
+              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center">
+                <span className="text-primary-600 font-bold text-lg">
+                  {getInitials(`${service.proProfile.firstName} ${service.proProfile.lastName}`)}
+                </span>
+              </div>
+              {service.proProfile.isVerifiedPro && (
+                <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-success-500 rounded-full flex items-center justify-center">
+                  <Shield className="w-3 h-3 text-white" />
+                </div>
+              )}
+            </div>
+
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center justify-between mb-1">
+                <h3 className="text-h3 font-semibold text-text-primary truncate">
+                  {service.proProfile.firstName} {service.proProfile.lastName}
+                </h3>
+                {service.proProfile.isVerifiedPro && (
+                  <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-success-100 text-success-700">
+                    Vérifié
+                  </span>
+                )}
+              </div>
+
+              <p className="text-body font-medium text-primary-600 mb-2">
+                {service.serviceCategory.name}
+              </p>
+
+              {/* Rating */}
+              <div className="flex items-center space-x-1 mb-2">
+                <div className="flex items-center">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className={`w-4 h-4 ${
+                        i < Math.floor(averageRating)
+                          ? 'text-warning-500 fill-current'
+                          : 'text-border-medium'
+                      }`}
+                    />
+                  ))}
+                </div>
+                <span className="text-small font-medium text-text-primary">
+                  {averageRating.toFixed(1)}
+                </span>
+                <span className="text-small text-text-muted">
+                  ({totalReviews} avis)
+                </span>
+              </div>
+
+              {/* Location */}
+              <div className="flex items-center text-small text-text-muted">
+                <MapPin className="w-4 h-4 mr-1" />
+                <span className="truncate">{service.city.name}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Premium Badge */}
+          {service.proProfile.isPremium && (
+            <div className="flex items-center justify-center px-3 py-2 bg-gradient-to-r from-warning-50 to-warning-100 rounded-lg border border-warning-200">
+              <Crown className="w-4 h-4 text-warning-600 mr-2" />
+              <span className="text-sm font-medium text-warning-700">Artisan Premium</span>
+            </div>
+          )}
+
+          {/* Description */}
+          {service.description && (
+            <p className="text-small text-text-secondary line-clamp-2">
+              {service.description}
+            </p>
+          )}
+
+          {/* Price */}
+          <div className="text-center text-small text-text-muted">
+            À partir de {service.basePrice} MAD
+          </div>
+        </div>
+
+        {/* Actions */}
+        <div className="flex space-x-2 pt-4 mt-auto">
+          <Link href={`/pro/${service.proProfile.id}`} className="flex-1">
+            <Button className="w-full bg-[#EDEEEF] hover:bg-[#F97B22]/10 text-text-primary rounded-[24px] py-2 font-semibold transition-all duration-200">
+              Voir le profil
+            </Button>
+          </Link>
+          <Button
+            onClick={handleContactClick}
+            className="flex-1 bg-[#F97B22] hover:bg-[#e66a1f] text-white rounded-[24px] py-2 font-semibold transition-all duration-200 hover:shadow-lg"
+          >
+            <MessageCircle className="w-4 h-4 mr-1" />
+            Contacter
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+interface ServiceGridProps {
+  filters: {
+      cityId?: string;
+      searchTerm?: string;
+      categoryId?: string;
+      minPrice?: number;
+      maxPrice?: number;
+      minRating?: number;
+      verified?: boolean;
+      premium?: boolean;
+      sort?: string;
+      order?: string;
+    };
+}
+
+export const ServiceGrid: React.FC<ServiceGridProps> = React.memo(({ filters }) => {
+  const router = useRouter();
+  const [services, setServices] = useState<any[]>([]);
+  const [pagination, setPagination] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [rateLimitError, setRateLimitError] = useState(false);
+  const [dismissedAlert, setDismissedAlert] = useState(false);
+  const abortControllerRef = useRef<AbortController | null>(null);
+  const debounceTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const fetchServices = useCallback(async () => {
+    // Cancel previous request
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+    }
+
+    // Create new abort controller
+    abortControllerRef.current = new AbortController();
+
+    setLoading(true);
+    setRateLimitError(false);
+    try {
+      const params: any = {
+        q: filters.searchTerm,
+        categoryId: filters.categoryId,
+        cityId: filters.cityId,
+        minPrice: filters.minPrice,
+        maxPrice: filters.maxPrice,
+        minRating: filters.minRating,
+        sort: filters.sort,
+        order: filters.order,
+        page: 1,
+        limit: 20,
+      };
+
+      // Only include verified/premium if true
+      if (filters.verified) params.verified = true;
+      if (filters.premium) params.premium = true;
+
+      // Remove undefined values
+      Object.keys(params).forEach(key => {
+        if (params[key] === undefined) {
+          delete params[key];
+        }
+      });
+
+      const response = await api.getServices(params, { signal: abortControllerRef.current.signal });
+      const servicesList = Array.isArray(response) ? response : response.items || response.data || response.services || [];
+      setServices(servicesList);
+      setPagination(response.pagination || null);
+      setError(false);
+    } catch (err: any) {
+      if (err?.code === 'ERR_CANCELED' || err?.name === 'CanceledError') {
+        // Request was cancelled, ignore
+        return;
+      }
+      if (err.response?.status === 429) {
+        setRateLimitError(true);
+        setError(false);
+      } else {
+        console.error('Error fetching services:', err);
+        setServices([]);
+        setPagination(null);
+        setError(true);
+      }
+    } finally {
+      setLoading(false);
+    }
+  }, [
+    filters.searchTerm,
+    filters.categoryId,
+    filters.cityId,
+    filters.minPrice,
+    filters.maxPrice,
+    filters.minRating,
+    filters.verified,
+    filters.premium,
+    filters.sort,
+    filters.order,
+  ]);
+
+  const debouncedFetchServices = useCallback(() => {
+    if (debounceTimeoutRef.current) {
+      clearTimeout(debounceTimeoutRef.current);
+    }
+    debounceTimeoutRef.current = setTimeout(() => {
+      fetchServices();
+    }, 300);
+  }, [fetchServices]);
+
+  useEffect(() => {
+    debouncedFetchServices();
+  }, [debouncedFetchServices]);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort();
+      }
+      if (debounceTimeoutRef.current) {
+        clearTimeout(debounceTimeoutRef.current);
+      }
+    };
+  }, []);
+  if (loading) {
+    return (
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+        {[...Array(12)].map((_, i) => (
+          <div key={i} className="bg-gradient-to-br from-[rgba(250,247,242,0.8)] to-[rgba(255,255,255,0.5)] backdrop-blur-sm rounded-[24px] p-8 shadow-[0_8px_24px_rgba(0,0,0,0.06)] animate-pulse">
+            <div className="space-y-4">
+              <div className="w-20 h-20 bg-[#EDEEEF] rounded-[24px] mx-auto"></div>
+              <div className="h-6 bg-[#EDEEEF] rounded w-24 mx-auto"></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  if (rateLimitError) {
+    return (
+      <div className="text-center py-12">
+        <div className="w-24 h-24 mx-auto mb-4 bg-warning-100 rounded-[24px] flex items-center justify-center">
+          <AlertCircle className="w-12 h-12 text-warning-600" />
+        </div>
+        <h3 className="text-h3 font-semibold text-text-primary mb-2 font-heading">
+          Trop de requêtes
+        </h3>
+        <p className="text-text-secondary mb-6 font-body">
+          Veuillez patienter un moment avant de rechercher à nouveau.
+        </p>
+        <Button
+          onClick={() => debouncedFetchServices()}
+          className="bg-[#EDEEEF] hover:bg-[#F97B22]/10 text-text-primary rounded-[24px] px-6 py-3 font-semibold transition-all duration-200"
+        >
+          Réessayer
+        </Button>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="text-center py-12">
+        <div className="w-24 h-24 mx-auto mb-4 bg-[#EDEEEF] rounded-[24px] flex items-center justify-center">
+          <AlertCircle className="w-12 h-12 text-text-muted" />
+        </div>
+        <h3 className="text-h3 font-semibold text-text-primary mb-2 font-heading">
+          Les services n'ont pas pu être chargés
+        </h3>
+        <p className="text-text-secondary mb-6 font-body">
+          Veuillez réessayer dans quelques instants.
+        </p>
+        <Button
+          onClick={() => debouncedFetchServices()}
+          className="bg-[#EDEEEF] hover:bg-[#F97B22]/10 text-text-primary rounded-[24px] px-6 py-3 font-semibold transition-all duration-200"
+        >
+          Réessayer
+        </Button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-6">
+      {/* Results Count */}
+      {!loading && (
+        <div className="text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#F97B22]/10 border border-[#F97B22]/20 rounded-[16px] text-sm text-[#F97B22] font-medium">
+            <span>🟠</span>
+            <span>{services.length} service{services.length !== 1 ? 's' : ''} trouvé{services.length !== 1 ? 's' : ''}</span>
+          </div>
+        </div>
+      )}
+
+      {/* Services Grid */}
+      {services.length === 0 ? (
+        <div className="text-center py-16">
+          <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-[#EDEEEF] to-[#F5F5F5] rounded-[32px] flex items-center justify-center shadow-lg">
+            <Search className="w-16 h-16 text-text-muted" />
+          </div>
+          <h3 className="text-h3 font-semibold text-text-primary mb-3 font-heading">
+            Aucun service trouvé
+          </h3>
+          <p className="text-body text-text-secondary mb-8 font-body max-w-md mx-auto">
+            Aucun service ne correspond à vos critères de recherche.
+          </p>
+          <Button
+            onClick={() => {
+              // Navigate back to services without filters
+              router.push('/services');
+            }}
+            className="bg-[#F97B22] hover:bg-[#e66a1f] text-white rounded-[24px] px-8 py-4 font-semibold transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+          >
+            Voir tous les services
+          </Button>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {services.map((service, index) => (
+            <ServiceCard
+              key={service.id}
+              service={service}
+              index={index}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+});

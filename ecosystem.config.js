@@ -1,0 +1,41 @@
+module.exports = {
+  apps: [
+    {
+      name: 'khadamat-backend',
+      script: 'npm',
+      args: 'run start:dev',
+      cwd: 'C:/Users/Administrator/Desktop/khadamat100kilo-master',
+      interpreter: 'none',
+      watch: false,
+      instances: 1,
+      autorestart: true,
+      max_memory_restart: '1G',
+      env: {
+        NODE_ENV: 'development',
+        PORT: 3000,
+      },
+      error_file: 'C:/Users/Administrator/Desktop/khadamat100kilo-master/logs/backend-error.log',
+      out_file: 'C:/Users/Administrator/Desktop/khadamat100kilo-master/logs/backend-out.log',
+      time: true,
+    },
+    {
+      name: 'khadamat-frontend',
+      script: 'npm',
+      args: 'run dev',
+      cwd: 'C:/Users/Administrator/Desktop/khadamat100kilo-master/khadamat-frontend',
+      interpreter: 'none',
+      watch: false,
+      instances: 1,
+      autorestart: true,
+      max_memory_restart: '1G',
+      env: {
+        NODE_ENV: 'development',
+        PORT: 4000,
+        NEXT_PUBLIC_API_URL: 'http://localhost:3000',
+      },
+      error_file: 'C:/Users/Administrator/Desktop/khadamat100kilo-master/logs/frontend-error.log',
+      out_file: 'C:/Users/Administrator/Desktop/khadamat100kilo-master/logs/frontend-out.log',
+      time: true,
+    },
+  ],
+};

@@ -1,0 +1,215 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - main [ref=e3]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - generic:
+            - generic:
+              - img
+            - generic:
+              - img
+          - generic [ref=e8]:
+            - 'link "Khadamat Logo Khadamat Plateforme #1 au Maroc" [ref=e10]':
+              - /url: /
+              - img "Khadamat Logo" [ref=e11]
+              - generic [ref=e12]:
+                - generic [ref=e13]: Khadamat
+                - generic [ref=e14]: "Plateforme #1 au Maroc"
+            - navigation [ref=e15]:
+              - link "Accueil" [ref=e17]:
+                - /url: /
+                - generic [ref=e18]: Accueil
+              - link "Services" [ref=e20]:
+                - /url: /services
+                - generic [ref=e21]: Services
+              - link "Blog" [ref=e23]:
+                - /url: /blog
+                - generic [ref=e24]: Blog
+              - link "FAQ" [ref=e26]:
+                - /url: /faq
+                - generic [ref=e27]: FAQ
+              - link "Contact" [ref=e29]:
+                - /url: /contact
+                - generic [ref=e30]: Contact
+            - generic [ref=e31]:
+              - button "Button" [ref=e32] [cursor=pointer]:
+                - generic [ref=e33]:
+                  - img [ref=e34]
+                  - text: Connexion
+              - button "Button" [ref=e37] [cursor=pointer]:
+                - generic [ref=e38]:
+                  - img [ref=e39]
+                  - text: S'inscrire
+              - button "Devenir Pro" [ref=e42] [cursor=pointer]:
+                - generic [ref=e43]: Devenir Pro
+              - button "Changer de langue" [ref=e45] [cursor=pointer]:
+                - img [ref=e46]
+                - generic [ref=e49]: FR
+        - main [ref=e50]:
+          - generic [ref=e53]:
+            - heading "Questions fréquentes" [level=1] [ref=e54]
+            - paragraph [ref=e55]: Trouvez rapidement les réponses à vos questions sur Khadamat.
+          - generic [ref=e57]:
+            - generic [ref=e58]:
+              - generic [ref=e59]:
+                - generic [ref=e60]:
+                  - img [ref=e62]
+                  - heading "Services & Réservations" [level=2] [ref=e64]
+                - generic [ref=e65]:
+                  - button "Comment réserver un service ?" [ref=e67] [cursor=pointer]:
+                    - generic [ref=e68]: Comment réserver un service ?
+                    - img [ref=e69]
+                  - button "Puis-je annuler une réservation ?" [ref=e72] [cursor=pointer]:
+                    - generic [ref=e73]: Puis-je annuler une réservation ?
+                    - img [ref=e74]
+                  - button "Comment contacter un professionnel ?" [ref=e77] [cursor=pointer]:
+                    - generic [ref=e78]: Comment contacter un professionnel ?
+                    - img [ref=e79]
+              - generic [ref=e81]:
+                - generic [ref=e82]:
+                  - img [ref=e84]
+                  - heading "Sécurité & Garanties" [level=2] [ref=e86]
+                - generic [ref=e87]:
+                  - button "Les professionnels sont-ils vérifiés ?" [ref=e89] [cursor=pointer]:
+                    - generic [ref=e90]: Les professionnels sont-ils vérifiés ?
+                    - img [ref=e91]
+                  - button "Que faire en cas de problème ?" [ref=e94] [cursor=pointer]:
+                    - generic [ref=e95]: Que faire en cas de problème ?
+                    - img [ref=e96]
+              - generic [ref=e98]:
+                - generic [ref=e99]:
+                  - img [ref=e101]
+                  - heading "Paiement & Tarifs" [level=2] [ref=e103]
+                - generic [ref=e104]:
+                  - button "Comment sont fixés les prix ?" [ref=e106] [cursor=pointer]:
+                    - generic [ref=e107]: Comment sont fixés les prix ?
+                    - img [ref=e108]
+                  - button "Quand suis-je débité ?" [ref=e111] [cursor=pointer]:
+                    - generic [ref=e112]: Quand suis-je débité ?
+                    - img [ref=e113]
+              - generic [ref=e115]:
+                - generic [ref=e116]:
+                  - img [ref=e118]
+                  - heading "Support & Aide" [level=2] [ref=e120]
+                - generic [ref=e121]:
+                  - button "Comment contacter le support ?" [ref=e123] [cursor=pointer]:
+                    - generic [ref=e124]: Comment contacter le support ?
+                    - img [ref=e125]
+                  - button "Puis-je laisser un avis ?" [ref=e128] [cursor=pointer]:
+                    - generic [ref=e129]: Puis-je laisser un avis ?
+                    - img [ref=e130]
+            - generic [ref=e133]:
+              - heading "Vous n'avez pas trouvé votre réponse ?" [level=3] [ref=e134]
+              - paragraph [ref=e135]: Notre équipe est là pour vous aider. Contactez-nous directement.
+              - generic [ref=e136]:
+                - button "Contacter le support" [ref=e137] [cursor=pointer]
+                - button "Consulter l'aide" [ref=e138] [cursor=pointer]
+    - contentinfo [ref=e139]:
+      - generic [ref=e141]:
+        - generic [ref=e142]:
+          - generic [ref=e143]:
+            - link "K Khadamat Services à domicile" [ref=e144]:
+              - /url: /
+              - generic [ref=e147]: K
+              - generic [ref=e148]:
+                - generic [ref=e149]: Khadamat
+                - generic [ref=e150]: Services à domicile
+            - paragraph [ref=e151]:
+              - text: La première plateforme marocaine de mise en relation avec des artisans de confiance.
+              - generic [ref=e152]: أول منصة مغربية للربط مع الحرفيين الموثوقين
+            - generic [ref=e153]:
+              - link "Facebook" [ref=e154]:
+                - /url: "#"
+                - img [ref=e155]
+              - link "Instagram" [ref=e157]:
+                - /url: "#"
+                - img [ref=e158]
+              - link "Twitter" [ref=e161]:
+                - /url: "#"
+                - img [ref=e162]
+          - generic [ref=e164]:
+            - heading "Services" [level=3] [ref=e165]
+            - list [ref=e166]:
+              - listitem [ref=e167]:
+                - link "Plomberie" [ref=e168]:
+                  - /url: /services?service=Plomberie
+                  - text: Plomberie
+              - listitem [ref=e170]:
+                - link "Électricité" [ref=e171]:
+                  - /url: /services?service=Électricité
+                  - text: Électricité
+              - listitem [ref=e173]:
+                - link "Ménage" [ref=e174]:
+                  - /url: /services?service=Ménage
+                  - text: Ménage
+              - listitem [ref=e176]:
+                - link "Peinture" [ref=e177]:
+                  - /url: /services?service=Peinture
+                  - text: Peinture
+              - listitem [ref=e179]:
+                - link "Jardinage" [ref=e180]:
+                  - /url: /services?service=Jardinage
+                  - text: Jardinage
+              - listitem [ref=e182]:
+                - link "Réparation" [ref=e183]:
+                  - /url: /services?service=Réparation
+                  - text: Réparation
+          - generic [ref=e185]:
+            - heading "Khadamat" [level=3] [ref=e186]
+            - list [ref=e187]:
+              - listitem [ref=e188]:
+                - link "À propos" [ref=e189]:
+                  - /url: /about
+              - listitem [ref=e190]:
+                - link "Comment ça marche" [ref=e191]:
+                  - /url: /how-it-works
+              - listitem [ref=e192]:
+                - link "Devenir pro" [ref=e193]:
+                  - /url: /devenir-pro
+              - listitem [ref=e194]:
+                - link "Carrières" [ref=e195]:
+                  - /url: /careers
+              - listitem [ref=e196]:
+                - link "Centre d'aide" [ref=e197]:
+                  - /url: /help
+              - listitem [ref=e198]:
+                - link "FAQ" [ref=e199]:
+                  - /url: /faq
+              - listitem [ref=e200]:
+                - link "Contact" [ref=e201]:
+                  - /url: /contact
+          - generic [ref=e202]:
+            - generic [ref=e203]:
+              - heading "Restez informé" [level=3] [ref=e204]
+              - paragraph [ref=e205]: Recevez nos offres exclusives et conseils bricolage.
+              - generic [ref=e206]:
+                - textbox "Votre email..." [ref=e207]
+                - button "Button" [disabled] [ref=e208]:
+                  - img [ref=e210]
+            - generic [ref=e213]:
+              - generic [ref=e214]:
+                - img [ref=e216]
+                - generic [ref=e218]: +212 6XX XXX XXX
+              - generic [ref=e219]:
+                - img [ref=e221]
+                - generic [ref=e224]: Casablanca, Maroc
+        - generic [ref=e226]:
+          - generic [ref=e227]:
+            - text: © 2025 Khadamat. Fait avec
+            - img [ref=e228]
+            - text: au Maroc
+          - generic [ref=e230]:
+            - link "Conditions" [ref=e231]:
+              - /url: /terms
+            - link "Confidentialité" [ref=e232]:
+              - /url: /privacy
+            - link "Sécurité" [ref=e233]:
+              - /url: /security
+          - button "Haut de page" [ref=e234] [cursor=pointer]:
+            - text: Haut de page
+            - img [ref=e236]
+  - region "Notifications alt+T"
+```

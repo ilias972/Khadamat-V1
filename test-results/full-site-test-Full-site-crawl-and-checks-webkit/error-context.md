@@ -1,0 +1,213 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - main [ref=e3]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - generic:
+            - generic:
+              - img
+            - generic:
+              - img
+          - generic [ref=e8]:
+            - 'link "Khadamat Logo Khadamat Plateforme #1 au Maroc" [ref=e10]':
+              - /url: /
+              - img "Khadamat Logo" [ref=e11]
+              - generic [ref=e12]:
+                - generic [ref=e13]: Khadamat
+                - generic [ref=e14]: "Plateforme #1 au Maroc"
+            - navigation [ref=e15]:
+              - link "Accueil" [ref=e17]:
+                - /url: /
+                - generic [ref=e18]: Accueil
+              - link "Services" [ref=e20]:
+                - /url: /services
+                - generic [ref=e21]: Services
+              - link "Blog" [ref=e23]:
+                - /url: /blog
+                - generic [ref=e24]: Blog
+              - link "FAQ" [ref=e26]:
+                - /url: /faq
+                - generic [ref=e27]: FAQ
+              - link "Contact" [ref=e29]:
+                - /url: /contact
+                - generic [ref=e30]: Contact
+            - generic [ref=e31]:
+              - button "Button" [ref=e32] [cursor=pointer]:
+                - generic [ref=e33]:
+                  - img [ref=e34]
+                  - text: Connexion
+              - button "Button" [ref=e37] [cursor=pointer]:
+                - generic [ref=e38]:
+                  - img [ref=e39]
+                  - text: S'inscrire
+              - button "Devenir Pro" [ref=e42] [cursor=pointer]:
+                - generic [ref=e43]: Devenir Pro
+              - button "Changer de langue" [ref=e45] [cursor=pointer]:
+                - img [ref=e46]
+                - generic [ref=e49]: FR
+        - main [ref=e50]:
+          - generic [ref=e57]:
+            - heading "Tous les services disponibles sur Khadamat" [level=1] [ref=e58]
+            - paragraph [ref=e59]: Choisissez un service et une ville pour découvrir les artisans disponibles près de chez vous.
+          - generic [ref=e62]:
+            - generic [ref=e65]:
+              - textbox "Rechercher un service, un artisan..." [ref=e66]
+              - img [ref=e67]
+            - generic [ref=e72]:
+              - generic [ref=e73]:
+                - heading "Filtres" [level=3] [ref=e74]
+                - button "Button" [ref=e75] [cursor=pointer]:
+                  - generic [ref=e76]:
+                    - img [ref=e77]
+                    - text: Réinitialiser
+              - generic [ref=e81]: Type de service
+              - generic [ref=e83]:
+                - generic [ref=e84]: Ville
+                - img [ref=e86]
+              - generic [ref=e90]:
+                - generic [ref=e91]: Prix (DH)
+                - generic [ref=e92]:
+                  - generic [ref=e93]:
+                    - img [ref=e94]
+                    - spinbutton [ref=e98]
+                  - generic [ref=e99]:
+                    - img [ref=e100]
+                    - spinbutton [ref=e104]
+              - generic [ref=e105]:
+                - generic [ref=e106]: Note minimum
+                - generic [ref=e107]:
+                  - img [ref=e108]
+                  - combobox [ref=e110]:
+                    - option "Toutes les notes" [selected]
+                    - option "4.5+ étoiles"
+                    - option "4.0+ étoiles"
+                    - option "3.5+ étoiles"
+                    - option "3.0+ étoiles"
+              - generic [ref=e111]:
+                - generic [ref=e112]: Type d'artisan
+                - generic [ref=e113]:
+                  - generic [ref=e114]:
+                    - checkbox "Artisans vérifiés" [ref=e115]
+                    - img [ref=e116]
+                    - generic [ref=e119]: Artisans vérifiés
+                  - generic [ref=e120]:
+                    - checkbox "Artisans premium" [ref=e121]
+                    - img [ref=e122]
+                    - generic [ref=e124]: Artisans premium
+              - generic [ref=e125]:
+                - generic [ref=e126]: Trier par
+                - combobox [ref=e127]:
+                  - option "Meilleures notes" [selected]
+                  - option "Prix croissant"
+                  - option "Prix décroissant"
+                  - option "Plus d'avis"
+                  - option "Plus récent"
+    - contentinfo [ref=e178]:
+      - generic [ref=e180]:
+        - generic [ref=e181]:
+          - generic [ref=e182]:
+            - link "K Khadamat Services à domicile" [ref=e183]:
+              - /url: /
+              - generic [ref=e186]: K
+              - generic [ref=e187]:
+                - generic [ref=e188]: Khadamat
+                - generic [ref=e189]: Services à domicile
+            - paragraph [ref=e190]:
+              - text: La première plateforme marocaine de mise en relation avec des artisans de confiance.
+              - generic [ref=e191]: أول منصة مغربية للربط مع الحرفيين الموثوقين
+            - generic [ref=e192]:
+              - link "Facebook" [ref=e193]:
+                - /url: "#"
+                - img [ref=e194]
+              - link "Instagram" [ref=e196]:
+                - /url: "#"
+                - img [ref=e197]
+              - link "Twitter" [ref=e200]:
+                - /url: "#"
+                - img [ref=e201]
+          - generic [ref=e203]:
+            - heading "Services" [level=3] [ref=e204]
+            - list [ref=e205]:
+              - listitem [ref=e206]:
+                - link "Plomberie" [ref=e207]:
+                  - /url: /services?service=Plomberie
+                  - text: Plomberie
+              - listitem [ref=e209]:
+                - link "Électricité" [ref=e210]:
+                  - /url: /services?service=Électricité
+                  - text: Électricité
+              - listitem [ref=e212]:
+                - link "Ménage" [ref=e213]:
+                  - /url: /services?service=Ménage
+                  - text: Ménage
+              - listitem [ref=e215]:
+                - link "Peinture" [ref=e216]:
+                  - /url: /services?service=Peinture
+                  - text: Peinture
+              - listitem [ref=e218]:
+                - link "Jardinage" [ref=e219]:
+                  - /url: /services?service=Jardinage
+                  - text: Jardinage
+              - listitem [ref=e221]:
+                - link "Réparation" [ref=e222]:
+                  - /url: /services?service=Réparation
+                  - text: Réparation
+          - generic [ref=e224]:
+            - heading "Khadamat" [level=3] [ref=e225]
+            - list [ref=e226]:
+              - listitem [ref=e227]:
+                - link "À propos" [ref=e228]:
+                  - /url: /about
+              - listitem [ref=e229]:
+                - link "Comment ça marche" [ref=e230]:
+                  - /url: /how-it-works
+              - listitem [ref=e231]:
+                - link "Devenir pro" [ref=e232]:
+                  - /url: /devenir-pro
+              - listitem [ref=e233]:
+                - link "Carrières" [ref=e234]:
+                  - /url: /careers
+              - listitem [ref=e235]:
+                - link "Centre d'aide" [ref=e236]:
+                  - /url: /help
+              - listitem [ref=e237]:
+                - link "FAQ" [ref=e238]:
+                  - /url: /faq
+              - listitem [ref=e239]:
+                - link "Contact" [ref=e240]:
+                  - /url: /contact
+          - generic [ref=e241]:
+            - generic [ref=e242]:
+              - heading "Restez informé" [level=3] [ref=e243]
+              - paragraph [ref=e244]: Recevez nos offres exclusives et conseils bricolage.
+              - generic [ref=e245]:
+                - textbox "Votre email..." [ref=e246]
+                - button "Button" [disabled] [ref=e247]:
+                  - img [ref=e249]
+            - generic [ref=e252]:
+              - generic [ref=e253]:
+                - img [ref=e255]
+                - generic [ref=e257]: +212 6XX XXX XXX
+              - generic [ref=e258]:
+                - img [ref=e260]
+                - generic [ref=e263]: Casablanca, Maroc
+        - generic [ref=e265]:
+          - generic [ref=e266]:
+            - text: © 2025 Khadamat. Fait avec
+            - img [ref=e267]
+            - text: au Maroc
+          - generic [ref=e269]:
+            - link "Conditions" [ref=e270]:
+              - /url: /terms
+            - link "Confidentialité" [ref=e271]:
+              - /url: /privacy
+            - link "Sécurité" [ref=e272]:
+              - /url: /security
+          - button "Haut de page" [ref=e273] [cursor=pointer]:
+            - text: Haut de page
+            - img [ref=e275]
+  - region "Notifications alt+T"
+```

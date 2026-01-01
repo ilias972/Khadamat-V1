@@ -1,0 +1,321 @@
+{
+  "summary": {
+    "baseUrl": "http://localhost:3000/",
+    "totalPages": 7,
+    "totalErrors": 42,
+    "criticalErrors": 3,
+    "highErrors": 21,
+    "warnings": 8,
+    "suggestions": 10,
+    "testDurationMs": 120846,
+    "timestamp": "2025-12-28T19:03:45.793Z",
+    "context": {
+      "browser": "chromium"
+    }
+  },
+  "issues": [
+    {
+      "severity": "critical",
+      "category": "navigation",
+      "page": "http://localhost:3000/services",
+      "description": "Navigation échouée: page.goto: net::ERR_ABORTED at http://localhost:3000/services\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/services\", waiting until \"networkidle\"\u001b[22m\n",
+      "stackTrace": "page.goto: net::ERR_ABORTED at http://localhost:3000/services\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/services\", waiting until \"networkidle\"\u001b[22m\n\n    at inspectPage (C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\utils\\test-helpers.ts:188:16)\n    at C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\tests\\full-site-test.spec.ts:28:22"
+    },
+    {
+      "severity": "critical",
+      "category": "navigation",
+      "page": "http://localhost:3000/contact",
+      "description": "Navigation échouée: page.goto: Navigation to \"http://localhost:3000/contact\" is interrupted by another navigation to \"http://localhost:3000/\"\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/contact\", waiting until \"networkidle\"\u001b[22m\n",
+      "stackTrace": "page.goto: Navigation to \"http://localhost:3000/contact\" is interrupted by another navigation to \"http://localhost:3000/\"\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/contact\", waiting until \"networkidle\"\u001b[22m\n\n    at inspectPage (C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\utils\\test-helpers.ts:188:16)\n    at C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\tests\\full-site-test.spec.ts:28:22"
+    },
+    {
+      "severity": "critical",
+      "category": "navigation",
+      "page": "http://localhost:3000/services?service=Peinture",
+      "description": "Navigation échouée: page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/services?service=Peinture\", waiting until \"networkidle\"\u001b[22m\n",
+      "stackTrace": "page.goto: Page crashed\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/services?service=Peinture\", waiting until \"networkidle\"\u001b[22m\n\n    at inspectPage (C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\utils\\test-helpers.ts:188:16)\n    at C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\tests\\full-site-test.spec.ts:28:22"
+    },
+    {
+      "severity": "high",
+      "category": "network",
+      "page": "http://localhost:3000/",
+      "description": "Requête échouée: http://localhost:3000/_next/static/chunks/main-app.js?v=1766948521878 (net::ERR_ABORTED)"
+    },
+    {
+      "severity": "high",
+      "category": "network",
+      "page": "http://localhost:3000/",
+      "description": "Requête échouée: http://localhost:3000/_next/static/chunks/app/template.js (net::ERR_ABORTED)"
+    },
+    {
+      "severity": "high",
+      "category": "network",
+      "page": "http://localhost:3000/",
+      "description": "Requête échouée: http://localhost:3000/_next/static/chunks/app/services/page.js (net::ERR_ABORTED)"
+    },
+    {
+      "severity": "high",
+      "category": "network",
+      "page": "http://localhost:3000/",
+      "description": "Requête échouée: http://localhost:3000/_next/static/chunks/app/layout.js (net::ERR_ABORTED)"
+    },
+    {
+      "severity": "high",
+      "category": "network",
+      "page": "http://localhost:3000/services",
+      "description": "Réponse HTTP 401 pour http://localhost:3000/api/auth/refresh"
+    },
+    {
+      "severity": "high",
+      "category": "javascript",
+      "page": "http://localhost:3000/services",
+      "description": "[console error] Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "severity": "high",
+      "category": "network",
+      "page": "http://localhost:3000/blog",
+      "description": "Requête échouée: http://localhost:3000/_next/static/chunks/main-app.js?v=1766948535822 (net::ERR_ABORTED)"
+    },
+    {
+      "severity": "high",
+      "category": "network",
+      "page": "http://localhost:3000/faq",
+      "description": "Requête échouée: http://localhost:3000/ (net::ERR_ABORTED)"
+    },
+    {
+      "severity": "high",
+      "category": "network",
+      "page": "http://localhost:3000/auth/signup",
+      "description": "Requête échouée: http://localhost:3000/_next/static/chunks/main-app.js?v=1766948562175 (net::ERR_ABORTED)"
+    },
+    {
+      "severity": "high",
+      "category": "network",
+      "page": "http://localhost:3000/auth/signup",
+      "description": "Requête échouée: http://localhost:3000/_next/static/chunks/app/contact/page.js (net::ERR_ABORTED)"
+    },
+    {
+      "severity": "high",
+      "category": "network",
+      "page": "http://localhost:3000/services?service=%C3%89lectricit%C3%A9",
+      "description": "Réponse HTTP 429 pour http://localhost:3000/api/auth/refresh"
+    },
+    {
+      "severity": "high",
+      "category": "javascript",
+      "page": "http://localhost:3000/services?service=%C3%89lectricit%C3%A9",
+      "description": "[console error] Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+    },
+    {
+      "severity": "high",
+      "category": "network",
+      "page": "http://localhost:3000/services?service=M%C3%A9nage",
+      "description": "Réponse HTTP 429 pour http://localhost:3000/api/auth/refresh"
+    },
+    {
+      "severity": "high",
+      "category": "network",
+      "page": "http://localhost:3000/services?service=M%C3%A9nage",
+      "description": "Réponse HTTP 429 pour http://localhost:3000/api/auth/refresh"
+    },
+    {
+      "severity": "high",
+      "category": "network",
+      "page": "http://localhost:3000/services?service=M%C3%A9nage",
+      "description": "Réponse HTTP 429 pour http://localhost:3000/api/auth/refresh"
+    },
+    {
+      "severity": "high",
+      "category": "javascript",
+      "page": "http://localhost:3000/services?service=M%C3%A9nage",
+      "description": "[console error] Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+    },
+    {
+      "severity": "high",
+      "category": "javascript",
+      "page": "http://localhost:3000/services?service=M%C3%A9nage",
+      "description": "[console error] Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+    },
+    {
+      "severity": "high",
+      "category": "javascript",
+      "page": "http://localhost:3000/services?service=M%C3%A9nage",
+      "description": "[console error] Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+    },
+    {
+      "severity": "high",
+      "category": "network",
+      "page": "http://localhost:3000/services?service=Peinture",
+      "description": "Réponse HTTP 429 pour http://localhost:3000/api/auth/refresh"
+    },
+    {
+      "severity": "high",
+      "category": "network",
+      "page": "http://localhost:3000/services?service=Peinture",
+      "description": "Requête échouée: http://localhost:3000/api/services?sort=rating&order=desc&page=1&limit=20 (net::ERR_ABORTED)"
+    },
+    {
+      "severity": "high",
+      "category": "javascript",
+      "page": "http://localhost:3000/services?service=Peinture",
+      "description": "[console error] Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+    },
+    {
+      "severity": "medium",
+      "category": "performance",
+      "page": "http://localhost:3000/",
+      "description": "Temps de chargement élevé (8431 ms)"
+    },
+    {
+      "severity": "medium",
+      "category": "performance",
+      "page": "http://localhost:3000/blog",
+      "description": "Temps de chargement élevé (7341 ms)"
+    },
+    {
+      "severity": "medium",
+      "category": "performance",
+      "page": "http://localhost:3000/faq",
+      "description": "Temps de chargement élevé (12668 ms)"
+    },
+    {
+      "severity": "medium",
+      "category": "performance",
+      "page": "http://localhost:3000/auth/signup",
+      "description": "Temps de chargement élevé (12279 ms)"
+    },
+    {
+      "severity": "medium",
+      "category": "performance",
+      "page": "http://localhost:3000/services?service=Plomberie",
+      "description": "Temps de chargement élevé (10394 ms)"
+    },
+    {
+      "severity": "medium",
+      "category": "performance",
+      "page": "http://localhost:3000/services?service=%C3%89lectricit%C3%A9",
+      "description": "Temps de chargement élevé (4963 ms)"
+    },
+    {
+      "severity": "medium",
+      "category": "performance",
+      "page": "http://localhost:3000/services?service=M%C3%A9nage",
+      "description": "Temps de chargement élevé (7832 ms)"
+    },
+    {
+      "severity": "medium",
+      "category": "javascript",
+      "page": "http://localhost:3000/services?service=M%C3%A9nage",
+      "description": "[console warning] API POST /auth/refresh 429: [object Object]"
+    },
+    {
+      "severity": "low",
+      "category": "form",
+      "page": "http://localhost:3000/",
+      "description": "Formulaire sans champs requis détectés (vérifier la validation côté client)"
+    },
+    {
+      "severity": "low",
+      "category": "form",
+      "page": "http://localhost:3000/",
+      "description": "Formulaire sans champs requis détectés (vérifier la validation côté client)"
+    },
+    {
+      "severity": "low",
+      "category": "seo",
+      "page": "http://localhost:3000/blog",
+      "description": "Pas de balise H1 trouvée"
+    },
+    {
+      "severity": "low",
+      "category": "form",
+      "page": "http://localhost:3000/blog",
+      "description": "Formulaire sans champs requis détectés (vérifier la validation côté client)"
+    },
+    {
+      "severity": "low",
+      "category": "form",
+      "page": "http://localhost:3000/blog",
+      "description": "Formulaire sans champs requis détectés (vérifier la validation côté client)"
+    },
+    {
+      "severity": "low",
+      "category": "form",
+      "page": "http://localhost:3000/faq",
+      "description": "Formulaire sans champs requis détectés (vérifier la validation côté client)"
+    },
+    {
+      "severity": "low",
+      "category": "form",
+      "page": "http://localhost:3000/auth/signup",
+      "description": "Formulaire sans champs requis détectés (vérifier la validation côté client)"
+    },
+    {
+      "severity": "low",
+      "category": "form",
+      "page": "http://localhost:3000/services?service=Plomberie",
+      "description": "Formulaire sans champs requis détectés (vérifier la validation côté client)"
+    },
+    {
+      "severity": "low",
+      "category": "form",
+      "page": "http://localhost:3000/services?service=%C3%89lectricit%C3%A9",
+      "description": "Formulaire sans champs requis détectés (vérifier la validation côté client)"
+    },
+    {
+      "severity": "low",
+      "category": "form",
+      "page": "http://localhost:3000/services?service=M%C3%A9nage",
+      "description": "Formulaire sans champs requis détectés (vérifier la validation côté client)"
+    }
+  ],
+  "perf": {
+    "http://localhost:3000/": {
+      "ttfb": 451.80000001192093,
+      "domContentLoaded": 1000.5999999642372,
+      "load": 8430.899999976158
+    },
+    "http://localhost:3000/blog": {
+      "ttfb": 603.2999999523163,
+      "domContentLoaded": 2023.699999988079,
+      "load": 7340.900000035763
+    },
+    "http://localhost:3000/faq": {
+      "ttfb": 1478.1000000238419,
+      "domContentLoaded": 2807.199999988079,
+      "load": 12668.199999988079
+    },
+    "http://localhost:3000/auth/signup": {
+      "ttfb": 895.3000000119209,
+      "domContentLoaded": 2107.899999976158,
+      "load": 12278.600000023842
+    },
+    "http://localhost:3000/services?service=Plomberie": {
+      "ttfb": 1150.7999999523163,
+      "domContentLoaded": 1605.800000011921,
+      "load": 10393.600000023842
+    },
+    "http://localhost:3000/services?service=%C3%89lectricit%C3%A9": {
+      "ttfb": 365.2999999523163,
+      "domContentLoaded": 661,
+      "load": 4962.600000023842
+    },
+    "http://localhost:3000/services?service=M%C3%A9nage": {
+      "ttfb": 661.2999999523163,
+      "domContentLoaded": 1528.1000000238419,
+      "load": 7832
+    }
+  },
+  "screenshots": {
+    "http://localhost:3000/": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\test-results\\screenshots\\localhost_3000_.png",
+    "http://localhost:3000/services": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\test-results\\screenshots\\localhost_3000_services.png",
+    "http://localhost:3000/blog": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\test-results\\screenshots\\localhost_3000_blog.png",
+    "http://localhost:3000/faq": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\test-results\\screenshots\\localhost_3000_faq.png",
+    "http://localhost:3000/contact": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\test-results\\screenshots\\localhost_3000_contact.png",
+    "http://localhost:3000/auth/signup": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\test-results\\screenshots\\localhost_3000_auth_signup.png",
+    "http://localhost:3000/services?service=Plomberie": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\test-results\\screenshots\\localhost_3000_services_service_Plomberie.png",
+    "http://localhost:3000/services?service=%C3%89lectricit%C3%A9": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\test-results\\screenshots\\localhost_3000_services_service__C3_89lectricit_C3_A9.png",
+    "http://localhost:3000/services?service=M%C3%A9nage": "C:\\Users\\Administrator\\Desktop\\khadamat100kilo-master\\test-results\\screenshots\\localhost_3000_services_service_M_C3_A9nage.png"
+  }
+}
